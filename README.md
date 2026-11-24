@@ -77,54 +77,80 @@ button{touch-action:manipulation}
 @media(hover:none){.btn:hover,.animal-card:hover{transform:none}}
 
 
-/* ===== Dieu chinh khoang cach va do dam menu Cicero ===== */
+
+/* ===== CICERO MENU FIX - áp dụng trực tiếp lên đúng selector ===== */
 .topbar{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-  column-gap:clamp(13px, 1.55vw, 21px);
-  row-gap:12px;
+  display:flex !important;
+  flex-wrap:wrap !important;
+  align-items:center !important;
+  justify-content:center !important;
+  column-gap:0 !important;
+  row-gap:12px !important;
+  padding:12px 18px !important;
 }
-.topbar .nav{
-  flex:0 0 auto;
-  width:auto;
-  max-width:100%;
-  padding:9px 3px;
-  font-weight:900;
-  letter-spacing:.1px;
-  white-space:nowrap;
+.topbar > button.nav{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex:0 0 auto !important;
+  width:auto !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  margin:0 16px 0 0 !important;
+  padding:8px 2px !important;
+  font-weight:900 !important;
+  letter-spacing:.15px !important;
+  white-space:nowrap !important;
+  line-height:1.35 !important;
 }
-/* Khoang cach lon hon giua cac cum: tai khoan | hoc tap | ket noi | gop y */
-.topbar .nav:nth-child(1),
-.topbar .nav:nth-child(5),
-.topbar .nav:nth-child(7){
-  margin-right:clamp(12px, 1.8vw, 24px);
+/* Tăng khoảng cách sau từng mục để không còn cảm giác dính chữ */
+.topbar > button.nav:nth-child(2),
+.topbar > button.nav:nth-child(3),
+.topbar > button.nav:nth-child(4),
+.topbar > button.nav:nth-child(6){
+  margin-right:22px !important;
 }
-/* Cac nut ben trai ro chu va co khoang cach deu */
-aside .sidebtn{
-  font-weight: 900;
-  letter-spacing: .1px;
-  margin-bottom: 3px;
+/* Tách rõ các cụm: tài khoản | khu vực học tập | kết nối | góp ý */
+.topbar > button.nav:nth-child(1),
+.topbar > button.nav:nth-child(5),
+.topbar > button.nav:nth-child(7){
+  margin-right:34px !important;
 }
-/* Tieu de trong cac trang, dac biet cua hang Doi qua */
-.panel h2,
-.panel h3,
-.mini h3,
-.badge-count{
-  font-weight: 900;
+.topbar > button.nav:last-child{margin-right:0 !important}
+.topbar > button.nav{font-weight:900 !important}
+/* Tiêu đề và tên phần trong cửa hàng Đổi quà */
+#view .panel h2,
+#view .panel h3,
+#view .panel .badge-count,
+#view .panel .mini h3{
+  font-weight:900 !important;
 }
-.mini h3{
-  margin-top: 0;
-  line-height: 1.3;
+/* Nút menu dọc bên trái */
+aside > .sidebtn{
+  font-weight:900 !important;
 }
 @media(max-width:680px){
-  .topbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:10px}
-  .topbar .nav{width:100%;white-space:normal;padding:9px 7px}
-  .topbar .nav:nth-child(1),
-  .topbar .nav:nth-child(5),
-  .topbar .nav:nth-child(7){margin-right:0}
+  .topbar{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px 14px !important;
+    padding:12px !important;
+  }
+  .topbar > button.nav,
+  .topbar > button.nav:nth-child(n){
+    width:100% !important;
+    min-width:0 !important;
+    min-height:44px !important;
+    margin:0 !important;
+    padding:10px 6px !important;
+    white-space:normal !important;
+    overflow-wrap:anywhere !important;
+    font-size:12px !important;
+    font-weight:900 !important;
+    line-height:1.3 !important;
+  }
 }
+/* ===== END CICERO MENU FIX ===== */
 
 </style></head><body><div class="app"><aside><div class="logo" data-page="Luyện tập" role="button" style="cursor:pointer">Cicero&amp;Co</div><button class="sidebtn" data-page="Bảng xếp hạng">Bảng xếp hạng</button><button class="sidebtn" data-page="Đổi quà">Đổi quà</button><button class="sidebtn" data-page="Trợ lý ảo">Trợ lý ảo</button><button class="sidebtn" data-page="Nhân vật">Nhân vật</button></aside><main><nav class="topbar"><button class="nav" data-page="Tài khoản">Đăng ký / Đăng nhập</button><button class="nav" data-page="Cá nhân">Cá nhân</button><button class="nav" data-page="Kiến thức">Kiến thức</button><button class="nav active" data-page="Luyện tập">Luyện tập</button><button class="nav" data-page="Đánh giá">Đánh giá</button><button class="nav" data-page="Bạn bè">Bạn bè</button><button class="nav" data-page="Thi đấu">Thi đấu</button><button class="nav" data-page="Góp ý">💌 Góp ý</button></nav><div id="view"></div></main></div>
 <script>
