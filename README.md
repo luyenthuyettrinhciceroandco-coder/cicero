@@ -76,6 +76,56 @@ button{touch-action:manipulation}
 }
 @media(hover:none){.btn:hover,.animal-card:hover{transform:none}}
 
+
+/* ===== Dieu chinh khoang cach va do dam menu Cicero ===== */
+.topbar{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  column-gap:clamp(13px, 1.55vw, 21px);
+  row-gap:12px;
+}
+.topbar .nav{
+  flex:0 0 auto;
+  width:auto;
+  max-width:100%;
+  padding:9px 3px;
+  font-weight:900;
+  letter-spacing:.1px;
+  white-space:nowrap;
+}
+/* Khoang cach lon hon giua cac cum: tai khoan | hoc tap | ket noi | gop y */
+.topbar .nav:nth-child(1),
+.topbar .nav:nth-child(5),
+.topbar .nav:nth-child(7){
+  margin-right:clamp(12px, 1.8vw, 24px);
+}
+/* Cac nut ben trai ro chu va co khoang cach deu */
+aside .sidebtn{
+  font-weight: 900;
+  letter-spacing: .1px;
+  margin-bottom: 3px;
+}
+/* Tieu de trong cac trang, dac biet cua hang Doi qua */
+.panel h2,
+.panel h3,
+.mini h3,
+.badge-count{
+  font-weight: 900;
+}
+.mini h3{
+  margin-top: 0;
+  line-height: 1.3;
+}
+@media(max-width:680px){
+  .topbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:10px}
+  .topbar .nav{width:100%;white-space:normal;padding:9px 7px}
+  .topbar .nav:nth-child(1),
+  .topbar .nav:nth-child(5),
+  .topbar .nav:nth-child(7){margin-right:0}
+}
+
 </style></head><body><div class="app"><aside><div class="logo" data-page="Luyện tập" role="button" style="cursor:pointer">Cicero&amp;Co</div><button class="sidebtn" data-page="Bảng xếp hạng">Bảng xếp hạng</button><button class="sidebtn" data-page="Đổi quà">Đổi quà</button><button class="sidebtn" data-page="Trợ lý ảo">Trợ lý ảo</button><button class="sidebtn" data-page="Nhân vật">Nhân vật</button></aside><main><nav class="topbar"><button class="nav" data-page="Tài khoản">Đăng ký / Đăng nhập</button><button class="nav" data-page="Cá nhân">Cá nhân</button><button class="nav" data-page="Kiến thức">Kiến thức</button><button class="nav active" data-page="Luyện tập">Luyện tập</button><button class="nav" data-page="Đánh giá">Đánh giá</button><button class="nav" data-page="Bạn bè">Bạn bè</button><button class="nav" data-page="Thi đấu">Thi đấu</button><button class="nav" data-page="Góp ý">💌 Góp ý</button></nav><div id="view"></div></main></div>
 <script>
 const skills=[
